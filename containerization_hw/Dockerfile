@@ -1,6 +1,9 @@
-FROM python:3.9
+ARG BASE_CONTAINER=python:3.9
+FROM ${BASE_CONTAINER}
 
-#WORKDIR /stars do i need it?
+ENV INPUT_FILE=input_file.txt
+
+WORKDIR /stars
 
 # install
 RUN \
@@ -21,4 +24,4 @@ RUN \
 	cd Starspace && \
 	make
 
-CMD ["bash"]
+ENTRYPOINT ./Starspace/starspace train -trainFile /volume/${INPUT_FILE} -model /volume/output_file

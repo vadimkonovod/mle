@@ -9,11 +9,5 @@ docker build -t stars .
 
 Run container:
 ```
-docker run --rm -it -v "$(pwd)/volume:/volume" stars
-```
-
-Run Starspace:
-```
-cd Starspace
-./starspace train -trainFile /volume/input_file.txt -model /volume/output_file
+docker run --rm -it -v "$(pwd)/volume:/volume" -e INPUT_FILE=input_file.txt stars 
 ```
