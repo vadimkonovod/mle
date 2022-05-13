@@ -4,7 +4,6 @@ Task is [here](https://docs.google.com/document/d/1CrWx350_j5s2YCWaI8trDccIRJC2a
 
 Build image:
 ```
-docker build -t stars .
 docker build -t stars --build-arg USER_ID=$(id -u) .
 ```
 
