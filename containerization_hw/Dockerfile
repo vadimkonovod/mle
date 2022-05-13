@@ -3,6 +3,7 @@ FROM ${BASE_CONTAINER}
 
 ENV INPUT_FILE=input_file.txt
 
+# workdir, for clarity
 WORKDIR /stars
 
 # install
@@ -23,5 +24,11 @@ RUN \
 	git clone https://github.com/facebookresearch/Starspace.git && \
 	cd Starspace && \
 	make
+
+# create user in order to restrict permissions
+ARG USER_ID
+
+RUN adduser --disabled-password --gecos '' --uid $USER_ID user
+USER user
 
 ENTRYPOINT ./Starspace/starspace train -trainFile /volume/${INPUT_FILE} -model /volume/output_file
