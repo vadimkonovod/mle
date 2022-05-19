@@ -10,22 +10,20 @@ dvc init [--subdir]
 2. Setup DVC remote:
 ```
 dvc remote add -d myremote gdrive://{GOOGLE_DRIVE_FOLDER_ID}
+[and commit and push to Git]
 ```
-3. commit and push to Git
-4. Generate some data file (titanic.csv)
-5. Track that data file with dvc:
+3. Generate some data file (titanic.csv)
+4. Track that data file with dvc:
 ```
 dvc add titanic.csv
 ```
-6. Start tracking data
+5. Start tracking data
 ```
 git add titanic.csv.dvc .gitignore
-```
-commit and push to Git
-```
+[and commit and push to Git]
 dvc push
 ```
-7. Check everything
+6. Check everything
 clone repo and run
 ```
 dvc pull titanic.csv
