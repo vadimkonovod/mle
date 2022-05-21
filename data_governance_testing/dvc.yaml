@@ -1,0 +1,11 @@
+stages:
+  train_test:
+    cmd: python train_test.py
+    deps:
+    - train_test.py
+    - train.csv
+    outs:
+    - feature_importance.png
+    metrics:
+    - metrics.json:
+        cache: false

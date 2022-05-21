@@ -2,6 +2,12 @@
 
 Task is [here](https://docs.google.com/document/d/1pAr39LnEju5najG11CtCFxv0yCTBzyceUUQVWVCi09Q/edit).
 
+### How to run model:
+```
+dvc pull
+dvc repro
+```
+
 ### How to setup DVC:
 1. Init DVC:
 ```
