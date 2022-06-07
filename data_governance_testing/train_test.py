@@ -24,7 +24,7 @@ y = train['Survived']
 features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
 X = train[features]
 
-model = RandomForestClassifier(n_estimators=400, max_depth=7, random_state=1)
+model = RandomForestClassifier(n_estimators=789, max_depth=7, random_state=1)
 cv = KFold(n_splits=5, shuffle=True)
 yhat = cross_val_predict(estimator= model, X=X, y=y, cv=cv)
 
