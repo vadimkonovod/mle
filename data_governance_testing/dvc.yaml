@@ -1,10 +1,6 @@
 stages:
-  get_data:
-    cmd: python get_data.py
-    deps:
-    - get_data.py
   train_test:
-    cmd: python train_test.py
+    cmd: python3 train_test.py
     deps:
     - train_test.py
     - train.csv
