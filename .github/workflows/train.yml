@@ -1,4 +1,4 @@
-name: titanic
+name: DVC pipeline
 on: [push]
 jobs:
   run:

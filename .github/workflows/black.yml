@@ -1,4 +1,4 @@
-name: black_push
+name: Black auto-formatting
 on: [push]
 jobs:
   build:

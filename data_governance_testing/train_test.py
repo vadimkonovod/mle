@@ -1,7 +1,7 @@
+import json
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import json
 import seaborn as sns
 
 from sklearn.ensemble import RandomForestClassifier
@@ -53,14 +53,14 @@ feature_df = feature_df.sort_values(
     ascending=False,
 )
 
-axis_fs = 18  # fontsize
-title_fs = 22  # fontsize
+AXIS_FS = 18  # fontsize
+TITLE_FS = 22  # fontsize
 sns.set(style="whitegrid")
 
 ax = sns.barplot(x="importance", y="feature", data=feature_df)
-ax.set_xlabel("Importance", fontsize=axis_fs)
-ax.set_ylabel("Feature", fontsize=axis_fs)
-ax.set_title("Random forest\nfeature importance", fontsize=title_fs)
+ax.set_xlabel("Importance", fontsize=AXIS_FS)
+ax.set_ylabel("Feature", fontsize=AXIS_FS)
+ax.set_title("Random forest\nfeature importance", fontsize=TITLE_FS)
 
 plt.tight_layout()
 plt.savefig("feature_importance.png", dpi=120)
