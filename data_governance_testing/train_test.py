@@ -15,7 +15,7 @@ train = pd.read_csv("train.csv")
 ###########################
 train.replace({"Sex": {"male": 0, "female": 1}}, inplace=True)
 train["Age"].fillna(1000, inplace=True)
-  
+
 ###########################
 ### MODELLING
 ###########################
