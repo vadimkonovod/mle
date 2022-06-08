@@ -18,19 +18,20 @@ dvc init [--subdir]
 dvc remote add -d myremote gdrive://{GOOGLE_DRIVE_FOLDER_ID}
 [commit and push to Git]
 ```
-3. Generate some data file [titanic.csv]
+3. Generate some data file [train.csv]
 4. Track that data file with dvc:
 ```
-dvc add titanic.csv
+dvc add train.csv
 ```
 5. Start tracking data
 ```
-git add titanic.csv.dvc .gitignore
+git add train.csv.dvc .gitignore
 [commit and push to Git]
 dvc push
 ```
 6. Check everything
 ```
 [clone repo and run 'dvc pull']
-dvc pull titanic.csv
+dvc pull train.csv
 ```
+7. For scenarios where code needs to access data on its own, e.g. automatic CI/CD in Github Actions (no interactive user OAuth authentication is needed) we need to create JSON key as described [here] (https://dvc.org/doc/user-guide/setup-google-drive-remote#using-service-accounts) and add "Repository secret" with name GDRIVE_CREDENTIALS_DATA to Github repository.

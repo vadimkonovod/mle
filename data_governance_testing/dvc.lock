@@ -1,11 +1,5 @@
 schema: '2.0'
 stages:
-  get_data:
-    cmd: python3 get_data.py
-    deps:
-    - path: get_data.py
-      md5: 3588ae9f69be9043116aa1d4303fa1dc
-      size: 220
   train_test:
     cmd: python3 train_test.py
     deps:
@@ -13,12 +7,12 @@ stages:
       md5: 9b75560db14fbe6a5e86cb55f72faf70
       size: 60301
     - path: train_test.py
-      md5: 7080a8283b323f5641b35b10ef52a402
-      size: 1866
+      md5: 563a521bc189b50ab9c21dfa7d2e1fff
+      size: 1867
     outs:
     - path: feature_importance.png
-      md5: ecaaa4190035f9de3df01a50d127c63d
-      size: 33915
+      md5: 158a93fbf0b1aa6a752813275b00dff7
+      size: 33893
     - path: metrics.json
-      md5: d95b741988596d5edf74c9ea6913c86e
+      md5: 3770186af8858537df6148764474111f
       size: 102
