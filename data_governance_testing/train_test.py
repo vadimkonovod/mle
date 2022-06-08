@@ -10,8 +10,6 @@ from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import KFold, cross_val_predict
 
 
-
-
 train = pd.read_csv("train.csv")
 
 ###########################
@@ -34,10 +32,9 @@ yhat = cross_val_predict(estimator=model, X=X, y=y, cv=cv)
 acc = np.mean(yhat == y)
 
 
-
 tn, fp, fn, tp = confusion_matrix(y, yhat).ravel()
 specificity = tn / (tn + fp)
-sensitivity = tp / (tp  +  fn)
+sensitivity = tp / (tp + fn)
 
 with open("metrics.json", "w") as outfile:
     json.dump(
@@ -45,9 +42,7 @@ with open("metrics.json", "w") as outfile:
         outfile,
     )
 
-    
-    
-    
+
 ###########################
 ### PLOT FEATURE IMPORTANCE
 ###########################
