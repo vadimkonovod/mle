@@ -15,6 +15,9 @@ train = pd.read_csv("train.csv")
 ###########################
 train.replace({"Sex": {"male": 0, "female": 1}}, inplace=True)
 train["Age"].fillna(1000, inplace=True)
+  
+
+
 
 ###########################
 ### MODELLING
@@ -29,12 +32,16 @@ yhat = cross_val_predict(estimator=model, X=X, y=y, cv=cv)
 
 acc = np.mean(yhat == y)
 tn, fp, fn, tp = confusion_matrix(y, yhat).ravel()
-specificity = tn / (tn + fp)
-sensitivity = tp / (tp + fn)
+specificity = tn / (tn    +     fp)
+sensitivity = tp / (tp +       fn)
 
 with open("metrics.json", "w") as outfile:
     json.dump(
-        {"accuracy": acc, "specificity": specificity, "sensitivity": sensitivity},
+        {"accuracy": acc,
+         "specificity": specificity, 
+         
+         
+         "sensitivity": sensitivity},
         outfile,
     )
 
