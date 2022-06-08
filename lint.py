@@ -37,7 +37,7 @@ logging.info(
 
 results = Run([path], do_exit=False)
 
-final_score = 9 #results.linter.stats["global_note"]
+final_score = 9  # results.linter.stats["global_note"]
 
 logging.info("!!!!!!")
 logging.info(results.linter.stats)
