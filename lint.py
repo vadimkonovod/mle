@@ -39,6 +39,10 @@ results = Run([path], do_exit=False)
 
 final_score = results.linter.stats["global_note"]
 
+logging.info("!!!!!!")
+logging.info(results.linter.stats)
+logging.info("!!!!!!")
+
 if final_score < threshold:
 
     message = (
