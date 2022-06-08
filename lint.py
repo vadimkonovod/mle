@@ -37,11 +37,8 @@ logging.info(
 
 results = Run([path], do_exit=False)
 
-final_score = 9 #results.linter.stats["global_note"]
-
-logging.info("!!!!!!")
-logging.info(results.linter.stats)
-logging.info("!!!!!!")
+final_score = results.linter.stats.global_note
+logging.info("dddd {}".format(results.linter.stats))
 
 if final_score < threshold:
 
