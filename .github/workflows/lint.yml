@@ -16,4 +16,4 @@ jobs:
           pip install -r ./data_governance_testing/requirements.txt
       - name: Run Pylint
         run: |
-          python lint.py --path ./data_governance_testing --threshold 9
+          python lint.py --path ./data_governance_testing --threshold 7.5
