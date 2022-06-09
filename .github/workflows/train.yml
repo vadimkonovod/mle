@@ -6,7 +6,7 @@ jobs:
     container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: actions/checkout@v2
-      - name: cml_run
+      - name: CML run
         working-directory: ./data_governance_testing
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -25,3 +25,7 @@ jobs:
           echo "## Feature importance"
           cml-publish feature_importance.png --md >> report.md
           cml-send-comment report.md
+      - name: run pytest
+        working-directory: ./data_governance_testing
+        run: |
+          pytest ./tests/pytests.py
