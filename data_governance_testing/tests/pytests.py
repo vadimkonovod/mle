@@ -23,7 +23,6 @@ def test_max_age_less_than_81():
     assert train["Age"].max() < 81
 
 
-
 def test_min_age_greater_than_0():
     assert train["Age"].min() > 0
 
